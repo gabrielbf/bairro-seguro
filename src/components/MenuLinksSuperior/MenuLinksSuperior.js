@@ -4,18 +4,18 @@ import './MenuLinksSuperior.css';
 
 const MenuLinksSuperior = () => (
   <div className="MenuLinksSuperior" role="navigation">
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link disabled" aria-current="Home" href="#">Home</a>
+    <ul className="nav">
+      <li className="nav-item">
+        <a className="nav-link disabled" aria-current="Home" href="#">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contas</a>
+      <li className="nav-item">
+        <a className="nav-link" href="#">Contas</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Usuários</a>
+      <li className="nav-item">
+        <a className="nav-link" href="#">Usuários</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Configurações</a>
+      <li className="nav-item">
+        <a className="nav-link" href="#">Configurações</a>
       </li>
     </ul>
   </div>
