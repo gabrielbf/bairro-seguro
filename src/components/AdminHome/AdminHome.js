@@ -6,7 +6,7 @@ import MenuLinksSuperior from '../MenuLinksSuperior/MenuLinksSuperior';
 import BotoesAcoes from '../BotoesAcoes/BotoesAcoes';
 
 const AdminHome = () => (
-  <div className="AdminHome">
+  <div className="AdminHome container">
     <MenuLinksSuperior />
     <BotoesAcoes />
   </div>
