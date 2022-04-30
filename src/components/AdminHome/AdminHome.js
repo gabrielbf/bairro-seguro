@@ -9,8 +9,11 @@ import MapaAdmin from '../MapaAdmin/MapaAdmin';
 const AdminHome = () => (
   <div className='AdminHome container'>
     <div className='row'>
-      <div className='col'>
+      <div className='col-11'>
         <MenuLinksSuperior />
+      </div>
+      <div className='col-1'>
+        Sair
       </div>
     </div>
     <div className='row'>
