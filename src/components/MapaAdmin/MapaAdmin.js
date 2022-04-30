@@ -5,7 +5,7 @@ import mapa from './maps.jpg';
 
 const MapaAdmin = () => (
   <div className='MapaAdmin'>
-    <img src={mapa} alt='Google Maps' />
+    <img src={mapa} className='img-fluid rounded' alt='Google Maps' />
   </div>
 );
 

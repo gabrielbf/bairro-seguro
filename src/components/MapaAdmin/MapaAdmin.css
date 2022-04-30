@@ -1,1 +1,5 @@
 .MapaAdmin {}
+
+.MapaAdmin > img {
+    width: 100%
+}
