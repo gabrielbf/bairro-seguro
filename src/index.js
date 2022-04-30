@@ -4,12 +4,25 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AdminHome from "./components/AdminHome/AdminHome";
+import UserForm from './components/UserForm/UserForm';
 
 import 'bootstrap/dist/css/bootstrap.css'
+
+import { 
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AdminHome />
+    <Router>
+      <Routes>
+        <Route path="/UserForm" element={<UserForm />} />
+        <Route path="/" element={<AdminHome />} />
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
