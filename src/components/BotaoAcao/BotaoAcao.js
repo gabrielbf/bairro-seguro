@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import './BotaoAcao.css';
 
 const BotaoAcao = (props) => (
-  <div className="BotaoAcao">
-    <button type="button" className="btn btn-primary btn-lg">
-      {props.quantidade} {props.nomeAcao}
+  <div className='BotaoAcao'>
+    <button type='button' className='btn btn-primary btn-lg'>
+      {props.quantidade}<br />
+      {props.nomeAcao}
     </button>
   </div>
 );
