@@ -4,11 +4,25 @@ import './AdminHome.css';
 
 import MenuLinksSuperior from '../MenuLinksSuperior/MenuLinksSuperior';
 import BotoesAcoes from '../BotoesAcoes/BotoesAcoes';
+import MapaAdmin from '../MapaAdmin/MapaAdmin';
 
 const AdminHome = () => (
-  <div className="AdminHome container">
-    <MenuLinksSuperior />
-    <BotoesAcoes />
+  <div className='AdminHome container'>
+    <div className='row'>
+      <div className='col'>
+        <MenuLinksSuperior />
+      </div>
+    </div>
+    <div className='row'>
+      <div className='col text-center'>
+        <BotoesAcoes />
+      </div>
+      </div>
+      <div className='row'>
+      <div className='col text-center'>
+        <MapaAdmin />
+      </div>
+    </div>
   </div>
 );
 
