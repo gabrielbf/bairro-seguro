@@ -167,7 +167,7 @@ class UserForm extends React.Component {
           <div className='row'>
             <div className='col-4'>
               <label htmlFor='estado' className='form-label'>Estado</label>
-              <select className='form-select' id='estado' name='estado' onChange={this.handleChange}>
+              <select value={this.state.estado} className='form-select' id='estado' name='estado' onChange={this.handleChange}>
                 <option value=''>Selecione o Estado</option>
                 <option value='AC'>Acre</option>
                 <option value='AL'>Alagoas</option>
@@ -201,7 +201,7 @@ class UserForm extends React.Component {
             </div>
             <div className='col-2'>
               <label htmlFor='uf' className='form-label'>UF</label>
-              <input name='uf' className='form-control' type='text' value={this.state.uf} onChange={this.handleChange} />
+              <input name='uf' className='form-control' type='text' value={this.state.uf} onChange={this.handleChange} readOnly/>
             </div>
           </div>
           <div className='row'>
@@ -228,7 +228,11 @@ class UserForm extends React.Component {
             </div>
             <div className='col-6'>
               <label htmlFor='tipo' className='form-label'>Tipo de Usuário</label>
-              <input name='tipo' className='form-control' type='text' value={this.state.tipo} onChange={this.handleChange} />
+              <select value={this.state.tipo} className='form-select' id='tipo' name='tipo' onChange={this.handleChange}>
+                <option value=''>Selecione o tipo</option>
+                <option value='agente'>Agente</option>
+                <option value='administrador'>Administrador</option>
+              </select>
             </div>
           </div>
           <div className='row my-3'>
