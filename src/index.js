@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AdminHome from "./components/AdminHome/AdminHome";
 import UserForm from './components/UserForm/UserForm';
+import UserAccounts from './components/UserAccounts/UserAccounts';
 
 import 'bootstrap/dist/css/bootstrap.css'
 
