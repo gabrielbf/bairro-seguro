@@ -10,7 +10,7 @@ const AdminHome = () => (
   <div className='AdminHome container'>
     <div className='row'>
       <div className='col-11'>
-        <MenuLinksSuperior />
+        <MenuLinksSuperior ativo='home'/>
       </div>
       <div className='col-1'>
         Sair
