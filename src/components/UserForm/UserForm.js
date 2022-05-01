@@ -153,135 +153,167 @@ class UserForm extends React.Component {
 
   render() {
     return (
-      <div className='container'>
+      <div className='UserForm container'>
         <MenuLinksSuperior ativo='userForm'/>
-        <form id='userForm' onSubmit={this.handleSubmit}>
-          <div className='row'>
-            <div className='col-4'>
-              <div className='mb-3'>
-                <label htmlFor='nome' className='form-label'>Nome</label>
-                <input name='nome' className='form-control' type='text' value={this.state.nome} onChange={this.handleChange} />
+        <div className='row'>
+          <div className='col-md-12'>
+            <div className='card'>
+              <div className='card-body'>
+                <h5 className='card-title text-uppercase mb-0'>Registrar Usuário</h5>
               </div>
-            </div>
-            <div className='col-4'>
-              <div className='mb-3'>
-                <label htmlFor='email' className='form-label'>E-Mail</label>
-                <input name='email' className='form-control' type='email' value={this.state.email} onChange={this.handleChange} />
-              </div>
-            </div>
-            <div className='col-4'>
-              <div className='mb-3'>
-                <label htmlFor='telefone' className='form-label'>Telefone</label>
-                <input name='telefone' className='form-control' type='text' value={this.state.telefone} onChange={this.handleChange} />
-              </div>
-            </div>
-          </div>
-          <div className='row'>
-            <div className='col-4'>
-              <label htmlFor='rua' className='form-label'>Rua</label>
-              <input name='rua' className='form-control' type='text' value={this.state.rua} onChange={this.handleChange} />
+
+              <form id='userForm' onSubmit={this.handleSubmit}>
+                <div className='row'>
+                  <div className='col-4'>
+                    <div className='mb-3 form-floating'>
+                      <input placeholder='' name='nome' className='form-control' type='text' value={this.state.nome} onChange={this.handleChange} />
+                      <label htmlFor='nome' className='form-label'>Nome</label>
+                    </div>
+                  </div>
+                  <div className='col-4'>
+                    <div className='mb-3 form-floating'>
+                      <input placeholder='' name='email' className='form-control' type='email' value={this.state.email} onChange={this.handleChange} />
+                      <label htmlFor='email' className='form-label'>E-Mail</label>
+                    </div>
+                  </div>
+                  <div className='col-4'>
+                    <div className='mb-3 form-floating'>
+                      <input placeholder='' name='telefone' className='form-control' type='text' value={this.state.telefone} onChange={this.handleChange} />
+                      <label htmlFor='telefone' className='form-label'>Telefone</label>
+                    </div>
+                  </div>
+                </div>
+                <div className='row'>
+                  <div className='col-4'>
+                    <div className='mb-3 form-floating'>
+                      <input placeholder='' name='rua' className='form-control' type='text' value={this.state.rua} onChange={this.handleChange} />
+                      <label htmlFor='rua' className='form-label'>Rua</label>
+                    </div>
+                  </div>
+                  <div className='col-2'>
+                    <div className='mb-3 form-floating'>
+                      <input placeholder='' name='numero' className='form-control' type='text' value={this.state.numero} onChange={this.handleChange} />
+                      <label htmlFor='numero' className='form-label'>Número</label>
+                    </div>
+                  </div>
+                  <div className='col-2'>
+                    <div className='mb-3 form-floating'>
+                      <input placeholder='' name='bairro' className='form-control' type='text' value={this.state.bairro} onChange={this.handleChange} />
+                      <label htmlFor='bairro' className='form-label'>Bairro</label>
+                    </div>
+                  </div>
+                  <div className='col-2'>
+                    <div className='mb-3 form-floating'>
+                      <input placeholder='' name='cep' className='form-control' type='text' value={this.state.cep} onChange={this.handleChange} />
+                      <label htmlFor='cep' className='form-label'>CEP</label>
+                    </div>
+                  </div>
+                  <div className='col-2'>
+                    <div className='mb-3 form-floating'>
+                      <input placeholder='' name='cidade' className='form-control' type='text' value={this.state.cidade} onChange={this.handleChange} />
+                      <label htmlFor='cidade' className='form-label'>Cidade</label>
+                    </div>
+                  </div>
+                </div>
+                <div className='row'>
+                  <div className='col-4'>
+                    <div className='mb-3 form-floating'>
+                      <select value={this.state.estado} className='form-select' id='estado' name='estado' onChange={this.handleChange}>
+                        <option value=''>Selecione o Estado</option>
+                        <option value='AC'>Acre</option>
+                        <option value='AL'>Alagoas</option>
+                        <option value='AP'>Amapá</option>
+                        <option value='AM'>Amazonas</option>
+                        <option value='BA'>Bahia</option>
+                        <option value='CE'>Ceará</option>
+                        <option value='DF'>Distrito Federal</option>
+                        <option value='ES'>Espírito Santo</option>
+                        <option value='GO'>Goiás</option>
+                        <option value='MA'>Maranhão</option>
+                        <option value='MT'>Mato Grosso</option>
+                        <option value='MS'>Mato Grosso do Sul</option>
+                        <option value='MG'>Minas Gerais</option>
+                        <option value='PA'>Pará</option>
+                        <option value='PB'>Paraíba</option>
+                        <option value='PR'>Paraná</option>
+                        <option value='PE'>Pernambuco</option>
+                        <option value='PI'>Piauí</option>
+                        <option value='RJ'>Rio de Janeiro</option>
+                        <option value='RN'>Rio Grande do Norte</option>
+                        <option value='RS'>Rio Grande do Sul</option>
+                        <option value='RO'>Rondônia</option>
+                        <option value='RR'>Roraima</option>
+                        <option value='SC'>Santa Catarina</option>
+                        <option value='SP'>São Paulo</option>
+                        <option value='SE'>Sergipe</option>
+                        <option value='TO'>Tocantins</option>
+                        <option value='EX'>Estrangeiro</option>
+                      </select>
+                      <label htmlFor='estado' className='form-label'>Estado</label>
+                    </div>
+                  </div>
+                  <div className='col-2'>
+                    <div className='mb-3 form-floating'>
+                      <input placeholder='' name='uf' className='form-control' type='text' value={this.state.uf} onChange={this.handleChange} readOnly/>
+                      <label htmlFor='uf' className='form-label'>UF</label>
+                    </div>
+                  </div>
+                </div>
+                <div className='row'>
+                  <div className='col-4'>
+                    <div className='mb-3 form-floating'>
+                      <input placeholder='' name='nomeUsuario' className='form-control' type='text' value={this.state.nomeUsuario} onChange={this.handleChange} />
+                      <label htmlFor='nomeUsuario' className='form-label'>Nome de Usuário</label>
+                    </div>
+                  </div>
+                  <div className='col-4'>
+                    <div className='mb-3 form-floating'>
+                      <select value={this.state.tipo} className='form-select' id='tipo' name='tipo' onChange={this.handleChange}>
+                        <option value=''>Selecione o tipo</option>
+                        <option value='agente'>Agente</option>
+                        <option value='administrador'>Administrador</option>
+                      </select>
+                      <label htmlFor='tipo' className='form-label'>Tipo de Usuário</label>
+                    </div>
+                  </div>
+                </div>
+                <div className='row'>
+                  <div className='col-6'>
+                    <div className='mb-3 form-floating'>
+                      <input placeholder='' name='senha' className='form-control' type='password' value={this.state.senha} onChange={this.handleChange} />
+                      <label htmlFor='senha' className='form-label'>Senha</label>
+                    </div>
+                  </div>
+                  <div className='col-6'>
+                    <div className='mb-3 form-floating'>
+                      <input placeholder='' name='confirmacaoSenha' className='form-control' type='password' value={this.state.confirmacaoSenha} 
+                        onBlur={this.handleBlurPass} onChange={this.handleChange} />
+                      <label htmlFor='confirmacaoSenha' className='form-label'>Confirmar Senha</label>
+                    </div>
+                  </div>
+                </div>
+                <div className='row mb-3'>
+                  <label htmlFor='foto' className='col-sm-2 col-form-label'>Foto de Usuário</label>
+                  <div className='col-sm-4'>
+                    <input name='foto' className='form-control' type='file' value={this.state.foto} onChange={this.handleChange} />
+                  </div>
+                </div>
+                <div className='row my-3'>
+                  <div className='col-5'>
+                  </div>
+                  <div className='col-1 gx-1'>
+                    <input className='btn btn-primary btn-lg' type="submit" value="Enviar" />
+                  </div>
+                  <div className='col-1 gx-1'>
+                    <input className='btn btn-secondary btn-lg' type="button" value='Limpar' onClick={this.limparForm} />
+                  </div>
+                  <div className='col-5'></div>
+                </div>
+              </form>
 
             </div>
-            <div className='col-2'>
-              <label htmlFor='numero' className='form-label'>Número</label>
-              <input name='numero' className='form-control' type='text' value={this.state.numero} onChange={this.handleChange} />
-            </div>
-            <div className='col-2'>
-              <label htmlFor='bairro' className='form-label'>Bairro</label>
-              <input name='bairro' className='form-control' type='text' value={this.state.bairro} onChange={this.handleChange} />
-            </div>
-            <div className='col-2'>
-              <label htmlFor='cep' className='form-label'>CEP</label>
-              <input name='cep' className='form-control' type='text' value={this.state.cep} onChange={this.handleChange} />
-            </div>
-            <div className='col-2'>
-              <label htmlFor='cidade' className='form-label'>Cidade</label>
-              <input name='cidade' className='form-control' type='text' value={this.state.cidade} onChange={this.handleChange} />
-            </div>
           </div>
-          <div className='row'>
-            <div className='col-4'>
-              <label htmlFor='estado' className='form-label'>Estado</label>
-              <select value={this.state.estado} className='form-select' id='estado' name='estado' onChange={this.handleChange}>
-                <option value=''>Selecione o Estado</option>
-                <option value='AC'>Acre</option>
-                <option value='AL'>Alagoas</option>
-                <option value='AP'>Amapá</option>
-                <option value='AM'>Amazonas</option>
-                <option value='BA'>Bahia</option>
-                <option value='CE'>Ceará</option>
-                <option value='DF'>Distrito Federal</option>
-                <option value='ES'>Espírito Santo</option>
-                <option value='GO'>Goiás</option>
-                <option value='MA'>Maranhão</option>
-                <option value='MT'>Mato Grosso</option>
-                <option value='MS'>Mato Grosso do Sul</option>
-                <option value='MG'>Minas Gerais</option>
-                <option value='PA'>Pará</option>
-                <option value='PB'>Paraíba</option>
-                <option value='PR'>Paraná</option>
-                <option value='PE'>Pernambuco</option>
-                <option value='PI'>Piauí</option>
-                <option value='RJ'>Rio de Janeiro</option>
-                <option value='RN'>Rio Grande do Norte</option>
-                <option value='RS'>Rio Grande do Sul</option>
-                <option value='RO'>Rondônia</option>
-                <option value='RR'>Roraima</option>
-                <option value='SC'>Santa Catarina</option>
-                <option value='SP'>São Paulo</option>
-                <option value='SE'>Sergipe</option>
-                <option value='TO'>Tocantins</option>
-                <option value='EX'>Estrangeiro</option>
-              </select>
-            </div>
-            <div className='col-2'>
-              <label htmlFor='uf' className='form-label'>UF</label>
-              <input name='uf' className='form-control' type='text' value={this.state.uf} onChange={this.handleChange} readOnly/>
-            </div>
-          </div>
-          <div className='row'>
-            <div className='col-4'>
-              <label htmlFor='nomeUsuario' className='form-label'>Nome de Usuário</label>
-              <input name='nomeUsuario' className='form-control' type='text' value={this.state.nomeUsuario} onChange={this.handleChange} />
-            </div>
-          </div>
-          <div className='row'>
-            <div className='col-6'>
-              <label htmlFor='senha' className='form-label'>Senha</label>
-              <input name='senha' className='form-control' type='password' value={this.state.senha} onChange={this.handleChange} />
-            </div>
-            <div className='col-6'>
-              <label htmlFor='confirmacaoSenha' className='form-label'>Confirmar Senha</label>
-              <input name='confirmacaoSenha' className='form-control' type='password' value={this.state.confirmacaoSenha} 
-                onBlur={this.handleBlurPass} onChange={this.handleChange} />
-            </div>
-          </div>
-          <div className='row'>
-            <div className='col-6'>
-              <label htmlFor='foto' className='form-label'>Foto de Usuário</label>
-              <input name='foto' className='form-control' type='file' value={this.state.foto} onChange={this.handleChange} />
-            </div>
-            <div className='col-6'>
-              <label htmlFor='tipo' className='form-label'>Tipo de Usuário</label>
-              <select value={this.state.tipo} className='form-select' id='tipo' name='tipo' onChange={this.handleChange}>
-                <option value=''>Selecione o tipo</option>
-                <option value='agente'>Agente</option>
-                <option value='administrador'>Administrador</option>
-              </select>
-            </div>
-          </div>
-          <div className='row my-3'>
-            <div className='col-5'>
-            </div>
-            <div className='col-1 gx-1'>
-              <input className='btn btn-primary btn-lg' type="submit" value="Enviar" />
-            </div>
-            <div className='col-1 gx-1'>
-              <input className='btn btn-secondary btn-lg' type="button" value='Limpar' onClick={this.limparForm} />
-            </div>
-            <div className='col-5'></div>
-          </div>
-        </form>
+        </div>
       </div>
     );
   }
