@@ -33,6 +33,7 @@ class UserForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.limparForm = this.limparForm.bind(this);
+    this.handleBlurPass = this.handleBlurPass.bind(this);
   }
 
   handleChange(event) {
@@ -53,6 +54,14 @@ class UserForm extends React.Component {
     }
   }
 
+  handleBlurPass(event) {
+    if (event.target.value !== this.state.senha) {
+      alert('Senhas são diferentes');
+      document.getElementsByName("confirmacaoSenha")[0].focus();
+      document.getElementsByName("confirmacaoSenha")[0].select();
+    }
+  }
+
   handleSubmit(event) {
     alert('Nome enviado: ' + this.state.nome + '\n' +
     'E-Mail enviado: ' + this.state.email + '\n' +
@@ -69,6 +78,21 @@ class UserForm extends React.Component {
     'Foto enviada: ' + this.state.foto + '\n' +
     'Tipo de Usuário enviado: ' + this.state.tipo + '\n'
     );
+
+    let valorVazio = false;
+    let valoresVazios = Array();
+    Object.keys(this.state)
+      .map( key => {
+        if(this.state[key] == ''){
+          valorVazio = true;
+          valoresVazios.push(key);
+        }
+      });
+    
+    if(valorVazio){
+      alert("Campos: \n\n" + valoresVazios.join(', ') + '\n\nestão vazios');
+    }
+
     event.preventDefault();
   }
   
@@ -181,7 +205,7 @@ class UserForm extends React.Component {
             </div>
           </div>
           <div className='row'>
-            <div className='col-5'>
+            <div className='col-4'>
               <label htmlFor='nomeUsuario' className='form-label'>Nome de Usuário</label>
               <input name='nomeUsuario' className='form-control' type='text' value={this.state.nomeUsuario} onChange={this.handleChange} />
             </div>
@@ -193,7 +217,8 @@ class UserForm extends React.Component {
             </div>
             <div className='col-6'>
               <label htmlFor='confirmacaoSenha' className='form-label'>Confirmar Senha</label>
-              <input name='confirmacaoSenha' className='form-control' type='password' value={this.state.confirmacaoSenha} onChange={this.handleChange} />
+              <input name='confirmacaoSenha' className='form-control' type='password' value={this.state.confirmacaoSenha} 
+                onBlur={this.handleBlurPass} onChange={this.handleChange} />
             </div>
           </div>
           <div className='row'>
