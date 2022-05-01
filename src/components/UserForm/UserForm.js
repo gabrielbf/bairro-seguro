@@ -91,6 +91,41 @@ class UserForm extends React.Component {
     
     if(valorVazio){
       alert("Campos: \n\n" + valoresVazios.join(', ') + '\n\nestão vazios');
+    } else {
+      var payload = {
+        "nome": this.state.nome,
+        "email": this.state.email,
+        "telefone": this.state.telefone,
+        "rua": this.state.rua,
+        "numero": this.state.numero,
+        "bairro": this.state.bairro,
+        "cep": this.state.cep,
+        "cidade": this.state.cidade,
+        "estado": this.state.estado,
+        "uf": this.state.uf,
+        "nomeUsuario": this.state.nomeUsuario,
+        "senha": this.state.senha,
+        "tipo": this.state.tipo,
+        "foto": ""
+      }
+
+      //TODO Destravar em https://cors-anywhere.herokuapp.com/corsdemo
+      fetch('https://cors-anywhere.herokuapp.com/https://bairroseguro.herokuapp.com/usuario', {
+        method: 'post',
+        mode: 'cors',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert('Usuário criado com sucesso');
+        console.log('Sucesso', data);
+        window.location = '/';
+      })
+      .catch((error) => {
+        alert('Erro ao criar usuário.\n' + error)
+        console.error('Erro', error);
+      });
     }
 
     event.preventDefault();
