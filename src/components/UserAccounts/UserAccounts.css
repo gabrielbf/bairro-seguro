@@ -1,1 +1,5 @@
 .UserAccounts {}
+
+.UserAccounts .card {
+    border: 0 solid transparent;
+}
