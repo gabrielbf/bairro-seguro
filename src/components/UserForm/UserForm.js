@@ -25,12 +25,14 @@ class UserForm extends React.Component {
       uf: '',
       nomeUsuario: '',
       senha: '',
+      confirmacaoSenha: '',
       foto: '',
       tipo: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.limparForm = this.limparForm.bind(this);
   }
 
   handleChange(event) {
@@ -43,7 +45,6 @@ class UserForm extends React.Component {
     this.setState({
       [name]: value
     });
-    //this.setState({email: event.target.email})
   }
 
   handleSubmit(event) {
@@ -64,12 +65,32 @@ class UserForm extends React.Component {
     );
     event.preventDefault();
   }
+  
+  limparForm(event) {
+    this.setState({
+      nome: '',
+      email: '',
+      telefone: '',
+      rua: '',
+      numero: '',
+      bairro: '',
+      cep: '',
+      cidade: '',
+      estado: '',
+      uf: '',
+      nomeUsuario: '',
+      senha: '',
+      confirmacaoSenha: '',
+      foto: '',
+      tipo: ''
+    });
+  }
 
   render() {
     return (
       <div className='container'>
         <MenuLinksSuperior ativo='userForm'/>
-        <form onSubmit={this.handleSubmit}>
+        <form id='userForm' onSubmit={this.handleSubmit}>
           <div className='row'>
             <div className='col-4'>
               <div className='mb-3'>
@@ -114,7 +135,7 @@ class UserForm extends React.Component {
             </div>
           </div>
           <div className='row'>
-            <div className='col-2'>
+            <div className='col-4'>
               <label htmlFor='estado' className='form-label'>Estado</label>
               <input name='estado' className='form-control' type='text' value={this.state.estado} onChange={this.handleChange} />
             </div>
@@ -156,7 +177,7 @@ class UserForm extends React.Component {
               <input className='btn btn-primary btn-lg' type="submit" value="Enviar" />
             </div>
             <div className='col-1 gx-1'>
-              <input className='btn btn-secondary btn-lg gx-1' type="button" value='Limpar' />
+              <input className='btn btn-secondary btn-lg' type="button" value='Limpar' onClick={this.limparForm} />
             </div>
             <div className='col-5'></div>
           </div>
