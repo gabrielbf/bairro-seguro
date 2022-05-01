@@ -20,6 +20,7 @@ root.render(
     <Router>
       <Routes>
         <Route path="/UserForm" element={<UserForm />} />
+        <Route path="/UserAccounts" element={<UserAccounts />} />
         <Route path="/" element={<AdminHome />} />
       </Routes>
     </Router>
